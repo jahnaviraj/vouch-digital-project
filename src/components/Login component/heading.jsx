@@ -2,8 +2,8 @@ import { Typography } from "antd";
 
 const { Title } = Typography;
 
-function Heading(props) {
-  return <Title>{props.text}</Title>;
-}
+const Heading = ({ text }) => {
+  return <Title>{text}</Title>;
+};
 
 export default Heading;

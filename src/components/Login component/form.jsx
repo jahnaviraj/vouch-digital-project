@@ -1,7 +1,7 @@
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
-function NormalForm(props) {
+const NormalForm = ({ onFinish, loading }) => {
   return (
     <Form
       name="normal_login"
@@ -9,7 +9,7 @@ function NormalForm(props) {
       initialValues={{
         remember: true,
       }}
-      onFinish={props.onFinish}
+      onFinish={onFinish}
     >
       <Form.Item
         name="email"
@@ -41,7 +41,12 @@ function NormalForm(props) {
         />
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+        <Button
+          disabled={loading}
+          type="primary"
+          htmlType="submit"
+          className="login-form-button"
+        >
           Log in
         </Button>
       </Form.Item>
@@ -55,6 +60,6 @@ function NormalForm(props) {
       </Form.Item>
     </Form>
   );
-}
+};
 
 export default NormalForm;

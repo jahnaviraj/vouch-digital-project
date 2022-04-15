@@ -1,29 +1,79 @@
 import Heading from "./heading";
 import Subtitle from "./subtitle";
 import NormalForm from "./form";
-const axios = require("axios").default;
+import DisplayAlert from "./alert";
+import { useState } from "react";
+import axios from "axios";
 
-function LoginForm() {
-  function onFinish(values) {
+const initialState = {
+  statusAvailable: false,
+  status: {
+    isLogin: false,
+    message: null,
+  },
+};
+
+const LoginForm = () => {
+  // set state for login status
+  const [loginStatus, setIsLogin] = useState(initialState);
+  // set state for loading once login clicked
+  const [isLoading, setIsLoading] = useState(false);
+
+  // define submit button function
+  const onFinish = (values) => {
+    // set loading true while api fetches response
+    setIsLoading(true);
     const userData = {
       email: values.email,
       password: values.password,
     };
-    console.log(userData);
-
-    axios.post("https://reqres.in/api/login", userData).then((response) => {
-      console.log(response.status);
-      console.log(response.data.token);
-    });
-  }
+    // make api call for login
+    axios
+      .post("https://reqres.in/api/login", userData)
+      .then(function (response) {
+        setIsLoading(false);
+        setIsLogin({
+          statusAvailable: true,
+          status: {
+            isLogin: true,
+            type: "success",
+            message: "Login successful",
+          },
+        });
+        setTimeout(() => {
+          setIsLogin(initialState);
+        }, 1500);
+      })
+      .catch(function (error) {
+        setIsLoading(false);
+        setIsLogin({
+          statusAvailable: true,
+          status: {
+            isLogin: false,
+            type: "error",
+            message: "Invalid credentials",
+          },
+        });
+        setTimeout(() => {
+          setIsLogin(initialState);
+        }, 1500);
+      });
+  };
 
   return (
     <div className="form-content">
       <Heading text="Welcome Back" />
       <Subtitle text="Subtitle text goes here" />
-      <NormalForm onFinish={onFinish} />
+
+      <NormalForm onFinish={onFinish} loading={isLoading} />
+      <DisplayAlert
+        loading={isLoading}
+        showAlert={loginStatus.statusAvailable}
+        type={loginStatus.status.type}
+        message={loginStatus.status.message}
+      />
     </div>
   );
-}
+};
 
 export default LoginForm;

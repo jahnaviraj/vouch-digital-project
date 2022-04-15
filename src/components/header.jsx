@@ -1,15 +1,11 @@
 import { PageHeader } from "antd";
 
-function Header(props) {
+const Header = ({ extra }) => {
   return (
     <div className="site-page-header-ghost-wrapper">
-      <PageHeader
-        ghost={false}
-        title="ATools."
-        extra={props.extra}
-      ></PageHeader>
+      <PageHeader ghost={false} title="ATools." extra={extra} />
     </div>
   );
-}
+};
 
 export default Header;

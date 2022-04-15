@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Login page of Vouch Digital
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive login page of Vouch Digital with React JS.
 
 ## Available Scripts
 

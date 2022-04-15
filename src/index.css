@@ -2,7 +2,9 @@
   .display-img {
     display: none;
   }
-
+  .site-page-header-ghost-wrapper {
+    margin-bottom: 20% !important;
+  }
   .form-content {
     width: 70% !important;
   }
@@ -31,7 +33,7 @@ h1 {
 }
 
 form {
-  margin-top: 40px !important;
+  margin-top: 20px !important;
 }
 
 a {
@@ -43,7 +45,6 @@ a {
 }
 .site-page-header-ghost-wrapper {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1.5px 5px 0 rgba(0, 0, 0, 0.1);
-  padding: 10px;
   margin-bottom: 5%;
   background-color: #f5f5f5;
 }
@@ -55,8 +56,6 @@ a {
   float: left;
 }
 .login-form-button {
-  background-color: rgba(10, 7, 58, 0.948) !important;
-  color: rgb(253, 253, 253) !important;
   width: 100%;
 }
 
@@ -71,7 +70,6 @@ a {
 
 .display-img {
   width: 60%;
-  height: auto;
 }
 
 .flex-container {
@@ -118,4 +116,8 @@ a {
 .ant-checkbox-checked .ant-checkbox-inner {
   background-color: rgba(10, 7, 58, 0.948) !important;
   border-color: rgba(10, 7, 58, 0.948) !important;
+}
+
+.ant-alert {
+  margin-top: 10px !important;
 }

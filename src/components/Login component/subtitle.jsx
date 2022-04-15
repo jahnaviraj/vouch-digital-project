@@ -2,8 +2,8 @@ import { Typography } from "antd";
 
 const { Text } = Typography;
 
-function Subtitle(props) {
-  return <Text>{props.text}</Text>;
-}
+const Subtitle = ({ text }) => {
+  return <Text>{text}</Text>;
+};
 
 export default Subtitle;

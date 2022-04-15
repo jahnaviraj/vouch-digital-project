@@ -1,11 +1,5 @@
-function Image() {
-  return (
-    <img
-      className="display-img"
-      src="https://i.ibb.co/X26Hsq9/solid-color-image.jpg"
-      alt="display"
-    />
-  );
-}
+const Image = ({ src }) => {
+  return <img className="display-img" src={src} alt="display" />;
+};
 
 export default Image;

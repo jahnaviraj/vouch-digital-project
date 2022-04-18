@@ -61,7 +61,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="form-content">
+    <>
       <Heading text="Welcome Back" />
       <Subtitle text="Subtitle text goes here" />
 
@@ -72,7 +72,7 @@ const LoginForm = () => {
         type={loginStatus.status.type}
         message={loginStatus.status.message}
       />
-    </div>
+    </>
   );
 };
 

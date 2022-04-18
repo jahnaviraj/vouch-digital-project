@@ -17,11 +17,12 @@ const App = () => (
     />
     {/* main content  */}
     <div className="flex-container">
-      <LoginForm className="flex-items" />
-      <Image
-        src="https://i.ibb.co/X26Hsq9/solid-color-image.jpg"
-        className="flex-items"
-      />
+      <div className="flex-items">
+        <LoginForm />
+      </div>
+      <div className="flex-items">
+        <Image src="https://i.ibb.co/X26Hsq9/solid-color-image.jpg" />
+      </div>
     </div>
   </div>
 );
